@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -8,335 +7,71 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-background: #f5f0e8;
-min-height: 100vh;
-font-family: ‘Noto Serif JP’, serif;
-padding: 2rem 1rem 4rem;
-}
-
-header {
-text-align: center;
-margin-bottom: 2.5rem;
-padding-top: 1rem;
-}
-
-header h1 {
-font-family: ‘Shippori Mincho’, serif;
-font-size: 2rem;
-color: #2a2018;
-letter-spacing: 0.2em;
-margin-bottom: 0.4rem;
-}
-
-header p {
-font-size: 0.75rem;
-color: #9a8a6a;
-letter-spacing: 0.15em;
-}
-
-.header-line {
-width: 60px;
-border: none;
-border-top: 2px solid #2a2018;
-margin: 0.8rem auto;
-}
-
-/* タブ */
-.tabs {
-display: flex;
-justify-content: center;
-gap: 0.5rem;
-margin-bottom: 2rem;
-flex-wrap: wrap;
-}
-
-.tab {
-padding: 0.4rem 1.1rem;
-font-size: 0.78rem;
-font-family: ‘Noto Serif JP’, serif;
-letter-spacing: 0.1em;
-border: 1px solid #2a2018;
-background: transparent;
-color: #2a2018;
-cursor: pointer;
-transition: all 0.2s;
-}
-
-.tab.active, .tab:hover {
-background: #2a2018;
-color: #fffef9;
-}
-
-/* カードグリッド */
-.grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-gap: 1.5rem;
-max-width: 1000px;
-margin: 0 auto;
-}
-
-/* カード */
-.card {
-background: #fffef9;
-border: 1px solid #d4c9b0;
-padding: 2rem 2rem 1.8rem;
-position: relative;
-box-shadow: 4px 4px 0 #c8bda4;
-cursor: pointer;
-transition: transform 0.15s, box-shadow 0.15s;
-}
-
-.card:hover {
-transform: translateY(-3px);
-box-shadow: 6px 6px 0 #b8ad94;
-}
-
-.corner-tl, .corner-br {
-position: absolute;
-width: 14px; height: 14px;
-border-color: #8a7a5a;
-border-style: solid;
-}
-.corner-tl { top: 7px; left: 7px; border-width: 2px 0 0 2px; }
-.corner-br { bottom: 7px; right: 7px; border-width: 0 2px 2px 0; }
-
-.card-meta {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 0.9rem;
-}
-
-.card-date {
-font-size: 0.68rem;
-color: #9a8a6a;
-letter-spacing: 0.06em;
-}
-
-.badge {
-font-size: 0.62rem;
-padding: 0.18rem 0.55rem;
-color: #fff;
-letter-spacing: 0.08em;
-}
-
-.badge.tsukemono { background: #5a7a4a; }
-.badge.chicken   { background: #7a4a3a; }
-.badge.cake      { background: #8a5a2a; }
-
-.card h2 {
-font-family: ‘Shippori Mincho’, serif;
-font-size: 1.25rem;
-font-weight: 600;
-color: #2a2018;
-letter-spacing: 0.05em;
-margin-bottom: 0.2rem;
-}
-
-.good {
-display: inline-block;
-background: #5a7a4a;
-color: #fff;
-font-size: 0.62rem;
-padding: 0.08em 0.45em;
-margin-left: 0.4rem;
-vertical-align: middle;
-}
-
-.divider {
-border: none;
-border-top: 1px solid #e0d8c8;
-margin: 1rem 0;
-}
-
-.section-title {
-font-size: 0.63rem;
-color: #8a7a5a;
-letter-spacing: 0.18em;
-margin-bottom: 0.55rem;
-}
-
-.ingredients {
-list-style: none;
-margin-bottom: 0.3rem;
-}
-
-.ingredients li {
-display: flex;
-justify-content: space-between;
-font-size: 0.82rem;
-color: #3a2e1e;
-padding: 0.28rem 0;
-border-bottom: 1px dotted #ddd3ba;
-line-height: 1.5;
-gap: 0.8rem;
-}
-
-.ingredients li:last-child { border-bottom: none; }
-
-.amount {
-font-weight: 600;
-font-size: 0.8rem;
-white-space: nowrap;
-color: #6a5a3a;
-}
-
-.ing-note {
-font-size: 0.68rem;
-color: #9a8a6a;
-display: block;
-}
-
-.steps {
-list-style: none;
-counter-reset: step;
-}
-
-.steps li {
-counter-increment: step;
-display: flex;
-gap: 0.7rem;
-margin-bottom: 0.65rem;
-font-size: 0.83rem;
-color: #3a2e1e;
-line-height: 1.7;
-align-items: flex-start;
-}
-
-.steps li::before {
-content: counter(step);
-min-width: 20px;
-height: 20px;
-background: #2a2018;
-color: #fffef9;
-font-size: 0.6rem;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
-margin-top: 3px;
-}
-
-.hl { background: #f0ead8; padding: 0.05em 0.25em; font-weight: 600; }
-
-.device-tag {
-display: inline-block;
-border: 1px solid #7a4a3a;
-color: #7a4a3a;
-font-size: 0.62rem;
-padding: 0.08em 0.38em;
-margin-left: 0.2rem;
-vertical-align: middle;
-}
-
-.temp {
-display: inline-block;
-border: 1px solid #8a5a2a;
-color: #8a5a2a;
-font-size: 0.68rem;
-padding: 0.08em 0.4em;
-margin-left: 0.2rem;
-font-weight: 600;
-vertical-align: middle;
-}
-
-.memo {
-background: #f7f2e4;
-border-left: 3px solid #5a7a4a;
-padding: 0.65rem 0.9rem;
-font-size: 0.78rem;
-color: #4a3e2e;
-line-height: 1.75;
-margin-top: 1rem;
-}
-
-.memo-title {
-font-size: 0.62rem;
-color: #5a7a4a;
-letter-spacing: 0.12em;
-margin-bottom: 0.3rem;
-}
-
-/* モーダル */
-.modal-overlay {
-display: none;
-position: fixed;
-inset: 0;
-background: rgba(42,32,24,0.55);
-z-index: 100;
-align-items: center;
-justify-content: center;
-padding: 1.5rem;
-}
-
-.modal-overlay.open { display: flex; }
-
-.modal {
-background: #fffef9;
-border: 1px solid #d4c9b0;
-max-width: 500px;
-width: 100%;
-max-height: 85vh;
-overflow-y: auto;
-padding: 2.5rem 2.5rem 2rem;
-position: relative;
-box-shadow: 6px 6px 0 #b8ad94;
-animation: popIn 0.2s ease;
-}
-
-@keyframes popIn {
-from { opacity: 0; transform: scale(0.96); }
-to { opacity: 1; transform: scale(1); }
-}
-
-.modal-close {
-position: absolute;
-top: 1rem; right: 1rem;
-background: none;
-border: none;
-font-size: 1.2rem;
-cursor: pointer;
-color: #8a7a5a;
-line-height: 1;
-}
-
-.count {
-text-align: center;
-font-size: 0.72rem;
-color: #9a8a6a;
-letter-spacing: 0.1em;
-margin-bottom: 1.5rem;
-}
+  body { background: #f5f0e8; min-height: 100vh; font-family: 'Noto Serif JP', serif; padding: 2rem 1rem 4rem; }
+  header { text-align: center; margin-bottom: 2.5rem; padding-top: 1rem; }
+  header h1 { font-family: 'Shippori Mincho', serif; font-size: 2rem; color: #2a2018; letter-spacing: 0.2em; margin-bottom: 0.4rem; }
+  header p { font-size: 0.75rem; color: #9a8a6a; letter-spacing: 0.15em; }
+  .header-line { width: 60px; border: none; border-top: 2px solid #2a2018; margin: 0.8rem auto; }
+  .tabs { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .tab { padding: 0.4rem 1.1rem; font-size: 0.78rem; font-family: 'Noto Serif JP', serif; letter-spacing: 0.1em; border: 1px solid #2a2018; background: transparent; color: #2a2018; cursor: pointer; transition: all 0.2s; }
+  .tab.active, .tab:hover { background: #2a2018; color: #fffef9; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: 0 auto; }
+  .card { background: #fffef9; border: 1px solid #d4c9b0; padding: 2rem 2rem 1.8rem; position: relative; box-shadow: 4px 4px 0 #c8bda4; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 6px 6px 0 #b8ad94; }
+  .corner-tl, .corner-br { position: absolute; width: 14px; height: 14px; border-color: #8a7a5a; border-style: solid; }
+  .corner-tl { top: 7px; left: 7px; border-width: 2px 0 0 2px; }
+  .corner-br { bottom: 7px; right: 7px; border-width: 0 2px 2px 0; }
+  .card-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.9rem; }
+  .card-date { font-size: 0.68rem; color: #9a8a6a; letter-spacing: 0.06em; }
+  .badge { font-size: 0.62rem; padding: 0.18rem 0.55rem; color: #fff; letter-spacing: 0.08em; }
+  .badge.tsukemono { background: #5a7a4a; }
+  .badge.chicken { background: #7a4a3a; }
+  .badge.cake { background: #8a5a2a; }
+  .card h2 { font-family: 'Shippori Mincho', serif; font-size: 1.25rem; font-weight: 600; color: #2a2018; letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+  .good { display: inline-block; background: #5a7a4a; color: #fff; font-size: 0.62rem; padding: 0.08em 0.45em; margin-left: 0.4rem; vertical-align: middle; }
+  .divider { border: none; border-top: 1px solid #e0d8c8; margin: 1rem 0; }
+  .section-title { font-size: 0.63rem; color: #8a7a5a; letter-spacing: 0.18em; margin-bottom: 0.55rem; }
+  .ingredients { list-style: none; margin-bottom: 0.3rem; }
+  .ingredients li { display: flex; justify-content: space-between; font-size: 0.82rem; color: #3a2e1e; padding: 0.28rem 0; border-bottom: 1px dotted #ddd3ba; line-height: 1.5; gap: 0.8rem; }
+  .ingredients li:last-child { border-bottom: none; }
+  .amount { font-weight: 600; font-size: 0.8rem; white-space: nowrap; color: #6a5a3a; }
+  .ing-note { font-size: 0.68rem; color: #9a8a6a; display: block; }
+  .steps { list-style: none; counter-reset: step; }
+  .steps li { counter-increment: step; display: flex; gap: 0.7rem; margin-bottom: 0.65rem; font-size: 0.83rem; color: #3a2e1e; line-height: 1.7; align-items: flex-start; }
+  .steps li::before { content: counter(step); min-width: 20px; height: 20px; background: #2a2018; color: #fffef9; font-size: 0.6rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 3px; }
+  .hl { background: #f0ead8; padding: 0.05em 0.25em; font-weight: 600; }
+  .device-tag { display: inline-block; border: 1px solid #7a4a3a; color: #7a4a3a; font-size: 0.62rem; padding: 0.08em 0.38em; margin-left: 0.2rem; vertical-align: middle; }
+  .temp { display: inline-block; border: 1px solid #8a5a2a; color: #8a5a2a; font-size: 0.68rem; padding: 0.08em 0.4em; margin-left: 0.2rem; font-weight: 600; vertical-align: middle; }
+  .memo { background: #f7f2e4; border-left: 3px solid #5a7a4a; padding: 0.65rem 0.9rem; font-size: 0.78rem; color: #4a3e2e; line-height: 1.75; margin-top: 1rem; }
+  .memo-title { font-size: 0.62rem; color: #5a7a4a; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(42,32,24,0.55); z-index: 100; align-items: center; justify-content: center; padding: 1.5rem; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: #fffef9; border: 1px solid #d4c9b0; max-width: 500px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 2.5rem 2.5rem 2rem; position: relative; box-shadow: 6px 6px 0 #b8ad94; animation: popIn 0.2s ease; }
+  @keyframes popIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+  .modal-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #8a7a5a; line-height: 1; }
+  .count { text-align: center; font-size: 0.72rem; color: #9a8a6a; letter-spacing: 0.1em; margin-bottom: 1.5rem; }
 </style>
-
 </head>
 <body>
-
 <header>
   <h1>私のレシピ帳</h1>
   <hr class="header-line">
   <p>作ってみて、また作りたいもの</p>
 </header>
-
 <div class="tabs">
   <button class="tab active" onclick="filterCards('all', this)">すべて</button>
   <button class="tab" onclick="filterCards('tsukemono', this)">漬けもの</button>
+  <button class="tab" onclick="filterCards('ferment', this)">発酵</button>
+  <button class="tab" onclick="filterCards('side', this)">副菜</button>
+  <button class="tab" onclick="filterCards('fish', this)">魚</button>
   <button class="tab" onclick="filterCards('chicken', this)">肉</button>
   <button class="tab" onclick="filterCards('cake', this)">お菓子</button>
 </div>
-
-<p class="count" id="count">3 レシピ</p>
-
+<p class="count" id="count">14 レシピ</p>
 <div class="grid" id="grid">
-
-  <!-- 1: かぶの葉の浅漬け -->
-
+ <!-- 1: かぶの葉の浅漬け -->
   <div class="card" data-category="tsukemono" onclick="openModal('modal1')">
-    <div class="corner-tl"></div>
-    <div class="corner-br"></div>
+    <div class="corner-tl"></div><div class="corner-br"></div>
     <div class="card-meta">
       <span class="card-date">2025年5月10日</span>
       <span class="badge tsukemono">浅漬け</span>
@@ -358,17 +93,11 @@ margin-bottom: 1.5rem;
       <li>水をしぼって出来上がり</li>
       <li>出汁昆布の細切りをお好みで加える</li>
     </ol>
-    <div class="memo">
-      <p class="memo-title">▷ メモ</p>
-      塩は重量比4%が決め手。昆布でうまみアップ。
-    </div>
+    <div class="memo"><p class="memo-title">▷ メモ</p>塩は重量比4%が決め手。昆布でうまみアップ。</div>
   </div>
-
   <!-- 2: 梅酢サラダチキン -->
-
   <div class="card" data-category="chicken" onclick="openModal('modal2')">
-    <div class="corner-tl"></div>
-    <div class="corner-br"></div>
+    <div class="corner-tl"></div><div class="corner-br"></div>
     <div class="card-meta">
       <span class="card-date">2025年5月10日</span>
       <span class="badge chicken">サラダチキン</span>
@@ -385,114 +114,7 @@ margin-bottom: 1.5rem;
     <ol class="steps">
       <li>鶏むね肉に<span class="hl">梅酢（100gにつき小さじ1）</span>を加える</li>
       <li>ジップロックに入れて<span class="hl">空気を抜く</span></li>
-      <li><span class="hl">1時間</span>
-        <span class="device-tag">炊飯器 保温</span>
-        <span class="device-tag">ヨーグルトメーカー 60℃</span>
-      </li>
+      <li><span class="hl">1時間</span><span class="device-tag">炊飯器 保温</span><span class="device-tag">ヨーグルトメーカー 60℃</span></li>
     </ol>
-    <div class="memo">
-      <p class="memo-title">▷ メモ</p>
-      梅酢の塩気でしっとり仕上がる。炊飯器保温・ヨーグルトメーカー60℃どちらでもOK。
-    </div>
+    <div class="memo"><p class="memo-title">▷ メモ</p>梅酢の塩気でしっとり仕上がる。炊飯器保温・ヨーグルトメーカー60℃どちらでもOK。</div>
   </div>
-
-  <!-- 3: キャロットケーキ -->
-
-  <div class="card" data-category="cake" onclick="openModal('modal3')">
-    <div class="corner-tl"></div>
-    <div class="corner-br"></div>
-    <div class="card-meta">
-      <span class="card-date">白みそ入り・グルテンフリー</span>
-      <span class="badge cake">ケーキ</span>
-    </div>
-    <h2>キャロットケーキ</h2>
-    <hr class="divider">
-    <p class="section-title">▷ 材料（抜粋）</p>
-    <ul class="ingredients">
-      <li><span>人参（中）<span class="ing-note">蒸後 約150g</span></span><span class="amount">1本（160g〜）</span></li>
-      <li><span>白みそ</span><span class="amount">20g</span></li>
-      <li><span>米粉</span><span class="amount">120g（→150g）</span></li>
-      <li><span>全卵</span><span class="amount">2個</span></li>
-    </ul>
-    <hr class="divider">
-    <p class="section-title">▷ 手順（概要）</p>
-    <ol class="steps">
-      <li>人参を小口切りにして蒸す</li>
-      <li>フープロで人参・白みそを細かくする</li>
-      <li>粉類・全卵を加えて混ぜる</li>
-      <li>型に入れ<span class="temp">180℃ · 40分</span></li>
-    </ol>
-    <div class="memo">
-      <p class="memo-title">▷ メモ</p>
-      米粉120→150g、BP 4→5gで調整可。シナモンなどお好みで。
-    </div>
-  </div>
-
-</div>
-
-<!-- モーダル詳細（キャロットケーキのみ全材料表示） -->
-
-<div class="modal-overlay" id="modal3" onclick="closeModal(event, 'modal3')">
-  <div class="modal">
-    <button class="modal-close" onclick="document.getElementById('modal3').classList.remove('open')">✕</button>
-    <div class="card-meta">
-      <span class="card-date">白みそ入り・グルテンフリー</span>
-      <span class="badge cake">ケーキ</span>
-    </div>
-    <h2 style="font-family:'Shippori Mincho',serif;font-size:1.4rem;color:#2a2018;margin-bottom:1rem;">キャロットケーキ</h2>
-    <hr class="divider">
-    <p class="section-title">▷ 材料（全量）</p>
-    <ul class="ingredients">
-      <li><span>人参（中）<span class="ing-note">蒸後 約150g</span></span><span class="amount">1本（160g〜）</span></li>
-      <li><span>白みそ</span><span class="amount">20g</span></li>
-      <li><span>みりんシロップ</span><span class="amount">10g</span></li>
-      <li><span>塩</span><span class="amount">ひとつまみ（0.3g）</span></li>
-      <li><span>米粉<span class="ing-note">→ 150gに増量も可</span></span><span class="amount">120g</span></li>
-      <li><span>ベーキングパウダー<span class="ing-note">→ 5gに増量も可</span></span><span class="amount">4g</span></li>
-      <li><span>全卵</span><span class="amount">2個</span></li>
-      <li><span>シナモンなど</span><span class="amount">適量</span></li>
-    </ul>
-    <hr class="divider">
-    <p class="section-title">▷ 手順</p>
-    <ol class="steps">
-      <li>人参を<span class="hl">小口切り</span>にして蒸す</li>
-      <li>フードプロセッサーに蒸した人参・白みそを入れ<span class="hl">細かくする</span></li>
-      <li>米粉・みりんシロップ・ベーキングパウダー・塩を加えて混ぜる</li>
-      <li>全卵を入れて<span class="hl">3回目の攪拌</span>、全体をよく混ぜる</li>
-      <li>型に入れて空気を抜き<span class="temp">180℃ · 40分</span>で焼く</li>
-    </ol>
-    <div class="memo">
-      <p class="memo-title">▷ メモ</p>
-      米粉120→150g、BP 4→5gで調整可。シナモンなどスパイスはお好みで。
-    </div>
-  </div>
-</div>
-
-<script>
-  function filterCards(category, btn) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    const cards = document.querySelectorAll('.card');
-    let count = 0;
-    cards.forEach(card => {
-      const show = category === 'all' || card.dataset.category === category;
-      card.style.display = show ? '' : 'none';
-      if (show) count++;
-    });
-    document.getElementById('count').textContent = count + ' レシピ';
-  }
-
-  function openModal(id) {
-    const m = document.getElementById(id);
-    if (m) m.classList.add('open');
-  }
-
-  function closeModal(e, id) {
-    if (e.target === e.currentTarget) {
-      document.getElementById(id).classList.remove('open');
-    }
-  }
-</script>
-
-</body>
-</html>
