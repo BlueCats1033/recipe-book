@@ -53,11 +53,13 @@
 </style>
 </head>
 <body>
+
 <header>
   <h1>私のレシピ帳</h1>
   <hr class="header-line">
   <p>作ってみて、また作りたいもの</p>
 </header>
+
 <div class="tabs">
   <button class="tab active" onclick="filterCards('all', this)">すべて</button>
   <button class="tab" onclick="filterCards('tsukemono', this)">漬けもの</button>
@@ -67,9 +69,12 @@
   <button class="tab" onclick="filterCards('chicken', this)">肉</button>
   <button class="tab" onclick="filterCards('cake', this)">お菓子</button>
 </div>
+
 <p class="count" id="count">14 レシピ</p>
+
 <div class="grid" id="grid">
- <!-- 1: かぶの葉の浅漬け -->
+
+  <!-- 1: かぶの葉の浅漬け -->
   <div class="card" data-category="tsukemono" onclick="openModal('modal1')">
     <div class="corner-tl"></div><div class="corner-br"></div>
     <div class="card-meta">
@@ -95,6 +100,7 @@
     </ol>
     <div class="memo"><p class="memo-title">▷ メモ</p>塩は重量比4%が決め手。昆布でうまみアップ。</div>
   </div>
+
   <!-- 2: 梅酢サラダチキン -->
   <div class="card" data-category="chicken" onclick="openModal('modal2')">
     <div class="corner-tl"></div><div class="corner-br"></div>
@@ -118,4 +124,417 @@
     </ol>
     <div class="memo"><p class="memo-title">▷ メモ</p>梅酢の塩気でしっとり仕上がる。炊飯器保温・ヨーグルトメーカー60℃どちらでもOK。</div>
   </div>
-  <!-- 3〜14のカード・モーダル・スクリプトは次のメッセージで -->
+
+  <!-- 3: キャロットケーキ -->
+  <div class="card" data-category="cake" onclick="openModal('modal3')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">白みそ入り・グルテンフリー</span>
+      <span class="badge cake">ケーキ</span>
+    </div>
+    <h2>キャロットケーキ<span class="good">お気に入り</span></h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料（抜粋）</p>
+    <ul class="ingredients">
+      <li><span>人参（中）<span class="ing-note">蒸後 約150g</span></span><span class="amount">1本（160g〜）</span></li>
+      <li><span>白みそ</span><span class="amount">20g</span></li>
+      <li><span>米粉</span><span class="amount">120g（→150g）</span></li>
+      <li><span>全卵</span><span class="amount">2個</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順（概要）</p>
+    <ol class="steps">
+      <li>人参を小口切りにして蒸す</li>
+      <li>フープロで人参・白みそを細かくする</li>
+      <li>粉類・全卵を加えて混ぜる</li>
+      <li>型に入れ<span class="temp">180℃ · 40分</span></li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>米粉120→150g、BP 4→5gで調整可。シナモンなどお好みで。</div>
+  </div>
+
+  <!-- 4: ぶり大根 -->
+  <div class="card" data-category="fish" onclick="openModal('modal4')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date"></span>
+      <span class="badge" style="background:#3a5a7a;">魚</span>
+    </div>
+    <h2>ぶり大根<span class="good">家族推し</span></h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料（抜粋）</p>
+    <ul class="ingredients">
+      <li><span>ぶり</span><span class="amount">適量</span></li>
+      <li><span>大根</span><span class="amount">1cm輪切り</span></li>
+      <li><span>みりん : 酒 : しょうゆ</span><span class="amount">5 : 3 : 1</span></li>
+      <li><span>しょうが</span><span class="amount">適量</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>ぶりに塩→ラップして冷蔵庫<span class="hl">20〜30分</span></li>
+      <li>大根1cm輪切り→下茹で→ザルにあげる</li>
+      <li>ぶりを半分に切り<span class="hl">湯通し</span>→すぐ冷水へ</li>
+      <li>煮汁（みりん150:酒90:しょうゆ30）を<span class="hl">中火</span>で煮立て材料を入れる</li>
+      <li>沸いたら1回ひっくり返し一度取り出す→大根だけ煮含める</li>
+      <li>魚を戻してしょうがも入れ、とろみがついたら煮汁をからめて完成</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>煮汁比率 みりん:酒:しょうゆ = 5:3:1。しらがねぎを添えると◎</div>
+  </div>
+
+  <!-- 5: 無限コンニャク -->
+  <div class="card" data-category="side" onclick="openModal('modal5')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">おかず・おつまみ</span>
+      <span class="badge tsukemono">こんにゃく</span>
+    </div>
+    <h2>無限コンニャク<span class="good">Good!</span></h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>こんにゃく</span><span class="amount">1枚</span></li>
+      <li><span>酒</span><span class="amount">大さじ4</span></li>
+      <li><span>しょうゆ</span><span class="amount">大さじ4</span></li>
+      <li><span>みりん</span><span class="amount">大さじ2</span></li>
+      <li><span>唐辛子</span><span class="amount">2本</span></li>
+      <li><span>かつお節・白ごま</span><span class="amount">適量</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>こんにゃくを<span class="hl">下茹で10分</span></li>
+      <li>まな板の上でふきんではさみ<span class="hl">スリコギで叩く</span></li>
+      <li>水を絞り手でちぎってサイズを整える</li>
+      <li>フライパンで<span class="hl">から炒り</span></li>
+      <li>酒・しょうゆ・みりん・唐辛子を加え<span class="hl">煮汁がなくなるまで</span>炒める</li>
+      <li>最後にかつお節と白ごまを入れて火を止める</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>叩いて味が染み込みやすくするのがポイント。</div>
+  </div>
+
+  <!-- 6: チンジャオロース -->
+  <div class="card" data-category="chicken" onclick="openModal('modal6')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">中華</span>
+      <span class="badge chicken">豚肉</span>
+    </div>
+    <h2>チンジャオロース<span class="good">Good!</span></h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>豚バラ肉</span><span class="amount">適量</span></li>
+      <li><span>ピーマン</span><span class="amount">適量（縦2cm幅）</span></li>
+      <li><span>しょうが</span><span class="amount">1片（千切り）</span></li>
+      <li><span>片栗粉</span><span class="amount">大さじ1</span></li>
+      <li><span>白だし</span><span class="amount">大さじ2</span></li>
+      <li><span>水</span><span class="amount">大さじ1</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>豚バラをピーマンと同じ幅に切り塩をふる</li>
+      <li><span class="hl">冷たいフライパン</span>に入れ片栗粉大さじ1をからめる</li>
+      <li>中火でゆっくり炒める</li>
+      <li>豚肉に火が通ったらしょうがを入れ<span class="hl">透明になったら</span>ピーマンを加える</li>
+      <li>ピーマンにつやが出たら白だし大2・水大1を加えて完成</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>冷たいフライパンスタートがポイント。白だし＋水でシンプルに味が決まる。</div>
+  </div>
+
+  <!-- 7: 重ね煮肉じゃが -->
+  <div class="card" data-category="chicken" onclick="openModal('modal7')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date"></span>
+      <span class="badge chicken">豚肉</span>
+    </div>
+    <h2>重ね煮肉じゃが<span class="good">Good!</span></h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>きのこ・糸こんにゃく</span><span class="amount">適量</span></li>
+      <li><span>生姜・にんにく</span><span class="amount">適量</span></li>
+      <li><span>じゃがいも・玉ねぎ・人参</span><span class="amount">適量</span></li>
+      <li><span>豚肉</span><span class="amount">適量</span></li>
+      <li><span>水</span><span class="amount">50cc × 2</span></li>
+      <li><span>醤油</span><span class="amount">70cc</span></li>
+      <li><span>塩</span><span class="amount">鍋底＋重ね塩</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>鍋底に<span class="hl">塩を振る</span></li>
+      <li>きのこ→糸こん→生姜・にんにく→じゃがいも→玉ねぎ→人参→豚肉の順で<span class="hl">重ねる</span></li>
+      <li>一番上に<span class="hl">重ね塩</span>をふり、水50ccを加えて<span class="temp">中火 10分</span></li>
+      <li>火の入り具合を確認し全体を混ぜる</li>
+      <li>水50cc＋醤油70ccを混ぜて加え、蓋をして<span class="hl">5分</span>火入れ</li>
+      <li>一度煮立ったら出来上がり</li>
+    </ol>
+    <div class="memo">
+      <p class="memo-title">▷ メモ・元動画</p>
+      重ねる順番が大事。<a href="https://youtube.com/watch?v=h-0Ndo1mlWE&si=IVM4OjYbVzIxnp4y" target="_blank" style="color:#5a7a4a;">YouTube動画はこちら</a>
+    </div>
+  </div>
+
+  <!-- 8: レモン麹 -->
+  <div class="card" data-category="ferment" onclick="openModal('modal8')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">発酵調味料</span>
+      <span class="badge" style="background:#6a7a2a;">麹</span>
+    </div>
+    <h2>レモン麹<span class="good">お気に入り</span></h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>レモン</span><span class="amount">1個（100g）</span></li>
+      <li><span>米麹</span><span class="amount">100g</span></li>
+      <li><span>塩</span><span class="amount">30g</span></li>
+      <li><span>水</span><span class="amount">150〜200cc</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>材料をすべて混ぜ合わせる</li>
+      <li><span class="hl">35℃で72時間</span>保温する</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>ヨーグルトメーカーで35℃管理が便利。</div>
+  </div>
+
+  <!-- 9: 醤油麹 -->
+  <div class="card" data-category="ferment" onclick="openModal('modal9')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">発酵調味料</span>
+      <span class="badge" style="background:#6a7a2a;">麹</span>
+    </div>
+    <h2>醤油麹</h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>米麹</span><span class="amount">100g</span></li>
+      <li><span>醤油<span class="ing-note">タプタプでは少ない。300ccは多すぎ</span></span><span class="amount">200〜250cc</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>麹と醤油を混ぜ合わせる</li>
+      <li><span class="hl">58℃で8時間</span>保温する</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>醤油はタプタプでは少ない。200〜250ccの間で調整。300ccは多すぎ。</div>
+  </div>
+
+  <!-- 10: 塩麹ベーコン -->
+  <div class="card" data-category="chicken" onclick="openModal('modal10')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">手作りベーコン</span>
+      <span class="badge chicken">豚肉</span>
+    </div>
+    <h2>塩麹ベーコン</h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>豚バラブロック</span><span class="amount">1kg</span></li>
+      <li><span>塩麹ペースト<span class="ing-note">※材料の10%</span></span><span class="amount">100g</span></li>
+      <li><span>ティーパック（茶葉スモーク用）</span><span class="amount">2コ</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>豚バラブロックは<span class="hl">フォークで穴をあける</span></li>
+      <li>ジップロックに入れて塩麹ペーストを<span class="hl">全体に染ませる</span></li>
+      <li><span class="hl">2〜3日冷蔵庫</span>で漬け込む</li>
+      <li>茶葉をティーパックから出して敷き、網をセットして常温に戻した肉を焼く<span class="temp">130℃ · 70分</span></li>
+      <li>好みの大きさに切って完成</li>
+    </ol>
+    <div class="memo">
+      <p class="memo-title">▷ メモ・元動画</p>
+      塩麹は肉の重量の10%が目安。<a href="https://youtu.be/SSc7se0f4rw?si=ZUqDoCtx1HIXXyxi" target="_blank" style="color:#5a7a4a;">YouTube動画はこちら</a>
+    </div>
+  </div>
+
+  <!-- 11: ナス餃子 -->
+  <div class="card" data-category="chicken" onclick="openModal('modal11')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">皮なし餃子</span>
+      <span class="badge chicken">豚肉</span>
+    </div>
+    <h2>ナス餃子</h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>なす</span><span class="amount">3本</span></li>
+      <li><span>塩</span><span class="amount">少々</span></li>
+      <li><span>豚ミンチ</span><span class="amount">400g</span></li>
+      <li><span>ニラ</span><span class="amount">1/2袋</span></li>
+      <li><span>生姜</span><span class="amount">1片</span></li>
+      <li><span>にんにく</span><span class="amount">1片</span></li>
+      <li><span>しょうゆ</span><span class="amount">大さじ1</span></li>
+      <li><span>オイスターソース</span><span class="amount">大さじ1</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>なすを薄切りにして塩を振り<span class="hl">ザルで休ませる</span></li>
+      <li>ビニール袋にミンチ・刻んだニラ・みじん切りの生姜とにんにく・醤油・オイスターソースを入れ<span class="hl">よく揉む</span></li>
+      <li>なすの水分を<span class="hl">よく拭き取る</span></li>
+      <li>ビニール袋の端を切り、なすの手前半分に肉タネを絞り出し<span class="hl">半分にたたむ</span></li>
+      <li>フライパンに並べ、蓋をして加熱。様子を見て<span class="hl">水を差す</span></li>
+      <li>ひっくり返して反対面にも焼き目をつける</li>
+    </ol>
+    <div class="memo">
+      <p class="memo-title">▷ メモ・元動画</p>
+      皮なしでヘルシー。なすの水分をしっかり拭くのが大事。<a href="https://youtu.be/WXbRK15_4Y8?si=6OrCI1R77NDVmPWO" target="_blank" style="color:#5a7a4a;">YouTube動画はこちら</a>
+    </div>
+  </div>
+
+  <!-- 12: 鮭の西京漬け -->
+  <div class="card" data-category="fish" onclick="openModal('modal12')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">鶏モモ肉でも◎</span>
+      <span class="badge" style="background:#3a5a7a;">魚</span>
+    </div>
+    <h2>鮭の西京漬け</h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>銀鮭（塩無添加）</span><span class="amount">2切れ</span></li>
+      <li><span>大根おろし</span><span class="amount">適宜</span></li>
+      <li><span>西京味噌</span><span class="amount">150g</span></li>
+      <li><span>酒</span><span class="amount">40g</span></li>
+      <li><span>みりん</span><span class="amount">40g</span></li>
+      <li><span>塩（下味用）</span><span class="amount">ひとつまみ×2（分量外）</span></li>
+      <li><span>酒（洗い用）</span><span class="amount">適量（分量外）</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>切り身両面に塩ひとつまみをして<span class="hl">室温30分</span>（冷蔵庫なら1時間）なじませる</li>
+      <li>西京味噌に酒・みりんを合わせて漬け床を作る</li>
+      <li>魚を酒でさっと洗い<span class="hl">水気を拭き取る</span></li>
+      <li>容器に漬け床を入れ魚に絡め<span class="hl">丸1日漬け込む</span></li>
+      <li>焼いて大根おろしを添えて完成</li>
+    </ol>
+    <div class="memo">
+      <p class="memo-title">▷ メモ・元動画</p>
+      臭み取りの塩は必須。酒で洗ってから漬けること。2日漬けるとさらに美味しい。鶏モモ肉（約400g・2枚）でも同様に作れる。<a href="https://youtu.be/In8TZXdIisQ?si=WZPrIhdiapK-xCk_" target="_blank" style="color:#5a7a4a;">YouTube動画はこちら</a>
+    </div>
+  </div>
+
+  <!-- 13: 紫キャベツのレモンマリネ -->
+  <div class="card" data-category="side" onclick="openModal('modal13')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">副菜・常備菜</span>
+      <span class="badge tsukemono">キャベツ</span>
+    </div>
+    <h2>紫キャベツのレモンマリネ<span class="good">お気に入り</span></h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>紫キャベツ</span><span class="amount">適量</span></li>
+      <li><span>塩</span><span class="amount">少々</span></li>
+      <li><span>レモン（皮＋果汁）</span><span class="amount">適量</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>紫キャベツを細切りにして塩でよく揉み<span class="hl">5分放置</span></li>
+      <li>レモンの皮を薄く剥ぎ細い千切りに。果汁も絞っておく</li>
+      <li>キャベツの水をよく絞り、レモンの皮の千切りとレモン汁を入れ<span class="hl">しっかり混ぜる</span></li>
+      <li>冷蔵庫で冷やして召し上がれ</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ・元動画</p>レモンの代わりにゆず・ゆず麹・レモン麹でも美味しい。<a href="https://youtu.be/4vZFnz-l26w?si=ujuz-6hyvmR_U2Hf" target="_blank" style="color:#5a7a4a;">YouTube動画はこちら</a></div>
+  </div>
+
+  <!-- 14: キャベツの柚子胡椒和え -->
+  <div class="card" data-category="side" onclick="openModal('modal14')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">副菜・常備菜</span>
+      <span class="badge tsukemono">キャベツ</span>
+    </div>
+    <h2>キャベツの柚子胡椒和え</h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>キャベツ</span><span class="amount">200g</span></li>
+      <li><span>柚子胡椒</span><span class="amount">小さじ1/2</span></li>
+      <li><span>鰹節</span><span class="amount">2〜3g</span></li>
+      <li><span>醤油</span><span class="amount">小さじ1</span></li>
+      <li><span>酢</span><span class="amount">小さじ1</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>キャベツを細切りにして<span class="hl">蒸す（8分）</span></li>
+      <li>醤油・酢・柚子胡椒を合わせてよく溶く</li>
+      <li>蒸しあがったキャベツの粗熱が取れたら<span class="hl">よく絞る</span></li>
+      <li>調味液と和えたら鰹節を入れ全体を混ぜる</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ・元動画</p>蒸した後しっかり絞るのがポイント。柚子胡椒の量はお好みで。<a href="https://youtu.be/4vZFnz-l26w?si=ujuz-6hyvmR_U2Hf" target="_blank" style="color:#5a7a4a;">YouTube動画はこちら</a></div>
+  </div>
+
+</div>
+<div class="modal-overlay" id="modal3" onclick="closeModal(event, 'modal3')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal3').classList.remove('open')">✕</button>
+    <div class="card-meta">
+      <span class="card-date">白みそ入り・グルテンフリー</span>
+      <span class="badge cake">ケーキ</span>
+    </div>
+    <h2 style="font-family:'Shippori Mincho',serif;font-size:1.4rem;color:#2a2018;margin-bottom:1rem;">キャロットケーキ<span class="good">お気に入り</span></h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料（全量）</p>
+    <ul class="ingredients">
+      <li><span>人参（中）<span class="ing-note">蒸後 約150g</span></span><span class="amount">1本（160g〜）</span></li>
+      <li><span>白みそ</span><span class="amount">20g</span></li>
+      <li><span>みりんシロップ</span><span class="amount">10g</span></li>
+      <li><span>塩</span><span class="amount">ひとつまみ（0.3g）</span></li>
+      <li><span>米粉<span class="ing-note">→ 150gに増量も可</span></span><span class="amount">120g</span></li>
+      <li><span>ベーキングパウダー<span class="ing-note">→ 5gに増量も可</span></span><span class="amount">4g</span></li>
+      <li><span>全卵</span><span class="amount">2個</span></li>
+      <li><span>シナモンなど</span><span class="amount">適量</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>人参を<span class="hl">小口切り</span>にして蒸す</li>
+      <li>フードプロセッサーに蒸した人参・白みそを入れ<span class="hl">細かくする</span></li>
+      <li>米粉・みりんシロップ・ベーキングパウダー・塩を加えて混ぜる</li>
+      <li>全卵を入れて<span class="hl">3回目の攪拌</span>、全体をよく混ぜる</li>
+      <li>型に入れて空気を抜き<span class="temp">180℃ · 40分</span>で焼く</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>米粉120→150g、BP 4→5gで調整可。シナモンなどスパイスはお好みで。</div>
+  </div>
+</div>
+
+<script>
+  function filterCards(category, btn) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('.card');
+    let count = 0;
+    cards.forEach(card => {
+      const show = category === 'all' || card.dataset.category === category;
+      card.style.display = show ? '' : 'none';
+      if (show) count++;
+    });
+    document.getElementById('count').textContent = count + ' レシピ';
+  }
+  function openModal(id) {
+    const m = document.getElementById(id);
+    if (m) m.classList.add('open');
+  }
+  function closeModal(e, id) {
+    if (e.target === e.currentTarget) {
+      document.getElementById(id).classList.remove('open');
+    }
+  }
+</script>
+</body>
+</html>
