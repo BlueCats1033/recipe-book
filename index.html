@@ -70,7 +70,7 @@
   <button class="tab" onclick="filterCards('cake', this)">お菓子</button>
 </div>
 
-<p class="count" id="count">14 レシピ</p>
+<p class="count" id="count">15 レシピ</p>
 
 <div class="grid" id="grid">
 
@@ -479,7 +479,69 @@
     <div class="memo"><p class="memo-title">▷ メモ・元動画</p>蒸した後しっかり絞るのがポイント。柚子胡椒の量はお好みで。<a href="https://youtu.be/4vZFnz-l26w?si=ujuz-6hyvmR_U2Hf" target="_blank" style="color:#5a7a4a;">YouTube動画はこちら</a></div>
   </div>
 
+  <!-- 15: 鶏ももの煮込み＆カレー -->
+  <div class="card" data-category="chicken" onclick="openModal('modal15')">
+    <div class="corner-tl"></div><div class="corner-br"></div>
+    <div class="card-meta">
+      <span class="card-date">煮込み・カレー兼用</span>
+      <span class="badge chicken">肉</span>
+    </div>
+    <h2>鶏ももの煮込み＆カレー</h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>鶏もも肉</span><span class="amount">2枚</span></li>
+      <li><span>玉ねぎ</span><span class="amount">2〜3個</span></li>
+      <li><span>塩</span><span class="amount">小さじ1/2</span></li>
+      <li><span>水</span><span class="amount">250cc</span></li>
+      <li><span>カレー粉（カレーにする場合）</span><span class="amount">小さじ2〜3</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順（概要）</p>
+    <ol class="steps">
+      <li>玉ねぎを<span class="hl">横半分</span>に切る</li>
+      <li>油なしで鶏もも肉を焼き、<span class="hl">両面こんがり</span>焼き目をつけて鍋へ</li>
+      <li>出た脂で玉ねぎも両面焼き、鶏肉の上に敷き詰める</li>
+      <li>フライパンの旨みを溶かした水250ccと塩を加え<span class="hl">蓋をして中火45分</span>煮込む</li>
+      <li>そのまま器に盛り、肉をほぐしながら食べる</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>焦げ目しっかりがポイント。カレーにする場合はほぐした後にカレー粉を加えてひと煮立ち。</div>
+  </div>
+
 </div>
+
+<div class="modal-overlay" id="modal15" onclick="closeModal(event, 'modal15')">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('modal15').classList.remove('open')">✕</button>
+    <div class="card-meta">
+      <span class="card-date">煮込み・カレー兼用</span>
+      <span class="badge chicken">肉</span>
+    </div>
+    <h2 style="font-family:'Shippori Mincho',serif;font-size:1.4rem;color:#2a2018;margin-bottom:1rem;">鶏ももの煮込み＆カレー</h2>
+    <hr class="divider">
+    <p class="section-title">▷ 材料</p>
+    <ul class="ingredients">
+      <li><span>鶏もも肉</span><span class="amount">2枚</span></li>
+      <li><span>玉ねぎ</span><span class="amount">2〜3個</span></li>
+      <li><span>塩</span><span class="amount">小さじ1/2</span></li>
+      <li><span>水</span><span class="amount">250cc</span></li>
+      <li><span>カレー粉（カレーにする場合）</span><span class="amount">小さじ2〜3</span></li>
+    </ul>
+    <hr class="divider">
+    <p class="section-title">▷ 手順</p>
+    <ol class="steps">
+      <li>玉ねぎを<span class="hl">横半分</span>に切る</li>
+      <li>フライパンに油を敷かず鶏もも肉を焼く。<span class="hl">両面こんがり</span>焼き目がついたら大きめの鍋に移す</li>
+      <li>出た脂で玉ねぎの両面に焼き目をつけ、鶏肉の上に敷き詰める</li>
+      <li>フライパンの旨みを溶かした<span class="hl">水250cc</span>を鍋に加え、塩小さじ1/2を入れる</li>
+      <li>蓋をして<span class="hl">中火で45分</span>煮込む</li>
+      <li>そのまま器に盛り、鶏肉をほぐしながら食べる（煮込み完成）</li>
+      <li>カレーにする場合：ヘラでほぐし<span class="hl">カレー粉 小さじ2〜3</span>を加えよく混ぜ、少し煮込んで完成</li>
+    </ol>
+    <div class="memo"><p class="memo-title">▷ メモ</p>焦げ目しっかりがポイント。油なしで焼くことで余分な脂が出て旨みも凝縮。カレー粉の量はお好みで調整を。</div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="modal3" onclick="closeModal(event, 'modal3')">
   <div class="modal">
     <button class="modal-close" onclick="document.getElementById('modal3').classList.remove('open')">✕</button>
